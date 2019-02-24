@@ -29,4 +29,5 @@ RUN dotnet publish -c Release -o out
 FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine
 WORKDIR /doc1
 COPY --from=build-env /doc1/out ./
+EXPOSE 80
 ENTRYPOINT ["dotnet", "doc1.dll"]
